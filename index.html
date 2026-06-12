@@ -89,24 +89,61 @@
       </div>
     </section>
 
-    <section class="split reveal">
-      <article class="panel project">
-        <div class="section-head"><span>project</span><small>m&tsi @ upenn</small></div>
-        <h2>Proxi</h2>
-        <p>Wearable badge + app for precise offline friend-finding in crowded spaces. Built with Arduino Stella, UWB, BLE, and IMU modules for 20 cm accuracy, elevation sensing, and unlimited pairings.</p>
-        <p>The app uses Swift/Xcode and UWB libraries for location tracking, connection, and real-time directional guidance.</p>
-        <p class="honor">Received Best Video Award.</p>
-      </article>
+    <section class="section reveal projects-section">
+      <div class="section-head"><span>projects</span><small>selected</small></div>
 
-      <article class="panel honors">
-        <div class="section-head"><span>honors</span><small>click</small></div>
-        <button data-detail="Score of 52, including 22/25 on Round 3.">USAMTS Honorable Mention <em>May 2026</em></button>
-        <button data-detail="AMC 10: 106.5; AMC 12: 100.5; top 6% nationally.">2x AIME Qualifier <em>Feb 2026</em></button>
-        <button data-detail="Perfect 1520 PSAT; one of three Rickards finalists.">National Merit Finalist <em>Dec 2025</em></button>
-        <button data-detail="One of 100 Florida students selected for STEM achievement; one of 40 scholarship recipients.">Florida Sunshine State Scholar <em>Apr 2025</em></button>
-      <button data-detail='<a href="https://drive.google.com/file/d/18EfwYj8h7G2GJxtvLUAzIBLGfwK-fFcC/view?usp=sharing" target="_blank" rel="noreferrer">Resume</a>'>
-  Classical Guitar <em>Since 2016</em>
-</button>      </article>
+      <div class="project-grid">
+        <article class="project-card">
+          <h2>Proxi</h2>
+          <p>Wearable badge + app for precise offline friend-finding in crowded spaces. Built with Arduino Stella, UWB, BLE, and IMU modules for 20 cm accuracy, elevation sensing, and unlimited pairings.</p>
+          <p>The app uses Swift/Xcode and UWB libraries for location tracking, connection, and real-time directional guidance.</p>
+          <p class="project-note">Best Video Award at M&TSI.</p>
+        </article>
+
+        <article class="project-card">
+          <h2>Tic-Tac-Toe</h2>
+          <p>Interactive browser-based tic-tac-toe game built with front-end logic for turn handling, win detection, and board-state updates.</p>
+          <a class="project-link" href="https://himankchhaya.github.io/Tic-Tac-Toe/" target="_blank" rel="noreferrer">
+            open project →
+          </a>
+        </article>
+
+        <article class="project-card">
+          <h2>Minesweeper</h2>
+          <p>Browser-based Minesweeper implementation with grid generation, mine placement, tile reveals, flagging, and game-state logic.</p>
+          <a class="project-link" href="https://himankchhaya.github.io/Minesweeper/" target="_blank" rel="noreferrer">
+            open project →
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section reveal honors-section">
+      <div class="section-head"><span>honors</span><small>selected</small></div>
+
+      <div class="honors-grid">
+        <button data-detail="Score of 52, including 22/25 on Round 3.">
+          USAMTS Honorable Mention <em>May 2026</em>
+        </button>
+
+        <button data-detail="AMC 10: 106.5; AMC 12: 100.5; top 6% nationally.">
+          2x AIME Qualifier <em>Feb 2026</em>
+        </button>
+
+        <button data-detail="Perfect 1520 PSAT; one of three Rickards finalists.">
+          National Merit Finalist <em>Dec 2025</em>
+        </button>
+
+        <button data-detail="One of 100 Florida students selected for STEM achievement; one of 40 scholarship recipients.">
+          Florida Sunshine State Scholar <em>Apr 2025</em>
+        </button>
+
+        <button data-detail='Classical guitarist since 2016. <a href="https://drive.google.com/file/d/18EfwYj8h7G2GJxtvLUAzIBLGfwK-fFcC/view?usp=sharing" target="_blank" rel="noreferrer">guitar resume →</a>'>
+          Classical Guitar <em>Since 2016</em>
+        </button>
+      </div>
+
+      <p id="honorOutput" class="honor-detail" aria-live="polite"></p>
     </section>
 
     <footer class="footer reveal">

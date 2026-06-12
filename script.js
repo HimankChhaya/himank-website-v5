@@ -12,23 +12,25 @@ document.querySelectorAll(".row-top").forEach((button) => {
   });
 });
 
-document.querySelectorAll(".honors button").forEach((button) => {
+const honorOutput = document.getElementById("honorOutput");
+
+document.querySelectorAll(".honors-grid button").forEach((button) => {
   button.addEventListener("click", () => {
     const active = button.classList.contains("active");
 
-    document.querySelectorAll(".honors button").forEach((x) => {
+    document.querySelectorAll(".honors-grid button").forEach((x) => {
       x.classList.remove("active");
-      const detail = x.querySelector(".honor-detail");
-      if (detail) detail.remove();
     });
 
-    if (!active) {
-      button.classList.add("active");
+    if (active) {
+      if (honorOutput) honorOutput.innerHTML = "";
+      return;
+    }
 
-      const detail = document.createElement("p");
-      detail.className = "honor-detail";
-      detail.innerHTML = button.dataset.detail || "";
-      button.appendChild(detail);
+    button.classList.add("active");
+
+    if (honorOutput) {
+      honorOutput.innerHTML = button.dataset.detail || "";
     }
   });
 });

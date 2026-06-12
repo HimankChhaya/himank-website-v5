@@ -274,83 +274,119 @@ strong {
   line-height: 1.65;
 }
 
-.split {
+.project-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-top: 28px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
 }
 
-.panel {
+.project-card {
+  min-height: 100%;
   border: 1px solid var(--line);
   background: var(--card);
-  border-radius: 20px;
-  padding: 22px;
+  border-radius: 18px;
+  padding: 18px;
+  transition: transform 0.18s, border-color 0.18s, background 0.18s;
 }
 
-.panel h2 {
-  font-size: 1.65rem;
+.project-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(140, 171, 255, 0.45);
+  background: var(--card2);
+}
+
+.project-card h2 {
+  font-size: 1.25rem;
   letter-spacing: -0.055em;
-  margin: 4px 0 12px;
+  margin: 0 0 12px;
 }
 
-.panel p {
+.project-card p {
   color: var(--muted);
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  margin: 0 0 10px;
 }
 
-.honor {
-  margin-top: 18px;
-  padding-top: 14px;
-  border-top: 1px solid var(--line);
+.project-note {
   color: var(--accent) !important;
   font-weight: 800;
+  margin-top: 14px !important;
 }
 
-.honors {
+.project-link {
+  display: inline-block;
+  margin-top: 4px;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.84rem;
+  border-bottom: 1px solid transparent;
+}
+
+.project-link:hover {
+  border-color: var(--accent);
+}
+
+.honors-grid {
   display: grid;
-  gap: 9px;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
 }
 
-.honors .section-head {
-  margin-bottom: 5px;
-}
-
-.honors button {
+.honors-grid button {
+  min-height: 96px;
   border: 1px solid var(--line);
-  background: transparent;
+  background: var(--card);
   color: var(--ink);
-  border-radius: 12px;
-  padding: 10px 12px;
+  border-radius: 16px;
+  padding: 13px;
   cursor: pointer;
   text-align: left;
   font-weight: 800;
   transition: background 0.16s, border-color 0.16s, transform 0.16s;
 }
 
-.honors button:hover,
-.honors button.active {
+.honors-grid button:hover,
+.honors-grid button.active {
   background: var(--card2);
   border-color: var(--accent);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
-.honors button em {
+.honors-grid button em {
   display: block;
   font-style: normal;
   color: var(--muted);
   font-weight: 500;
-  font-size: 0.75rem;
-  margin-top: 2px;
+  font-size: 0.72rem;
+  margin-top: 6px;
 }
 
 .honor-detail {
-  margin: 9px 0 0;
+  min-height: 34px;
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
   color: var(--muted);
   font-weight: 500;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   line-height: 1.55;
+}
+
+.honor-detail:empty {
+  display: none;
+}
+
+.honor-detail a {
+  color: var(--accent);
+  font-weight: 800;
+  border-bottom: 1px solid transparent;
+}
+
+.honor-detail a:hover {
+  border-color: var(--accent);
 }
 
 .footer {
@@ -392,6 +428,16 @@ strong {
   transform: none;
 }
 
+@media (max-width: 900px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .honors-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 780px) {
   .page {
     width: min(92vw, 980px);
@@ -406,10 +452,6 @@ strong {
     padding-top: 18px;
   }
 
-  .split {
-    grid-template-columns: 1fr;
-  }
-
   .footer {
     display: block;
   }
@@ -420,6 +462,16 @@ strong {
 
   .stack-track {
     animation-duration: 18s;
+  }
+}
+
+@media (max-width: 520px) {
+  .honors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .honors-grid button {
+    min-height: auto;
   }
 }
 
@@ -438,14 +490,4 @@ strong {
   #stars {
     display: none;
   }
-}
-
-.honor-detail a {
-  color: var(--accent);
-  font-weight: 800;
-  border-bottom: 1px solid transparent;
-}
-
-.honor-detail a:hover {
-  border-color: var(--accent);
 }
